@@ -187,3 +187,51 @@ num = [1, 2, 3, 4, 2, 5]
 target_sum = 5
 
 print(unique_sum(num,target_sum))
+
+
+
+def anagram(lst):
+    anagrams=[]
+    for i in lst :
+        for j in lst :
+            if i != j and sorted(i.strip()) == sorted(i.strip()):
+                anagrams.append(i)
+    return anagrams
+
+k = ["listen", "silent"]
+print(anagram(k))
+
+def zero_sum(nums):
+    result =[]
+    zeros =0
+
+    for n in nums :
+         if n == 0:
+             zeros +=1
+         else :
+             result.append(n)
+    result.extend([0]*zeros )
+    return result 
+z = [1,2,0,3,41,6,0,52,0,52,0,5,2,5,5,0,2,2,0]
+print(zero_sum(z))
+
+
+
+def max_sums(lst):
+    current_sum = lst[0]
+    max_sum = lst[0]
+    for i in lst[1:]:
+        current_sum = max(i, current_sum + i )
+        max_sum =max(max_sum,current_sum)
+    return max_sum
+
+v = [1,3,3,56,3,56,5,65,3,3,5,5,6,51,545,8]
+print(max_sums(v))
+
+
+def rotate_lst(lst,k):
+    k = k%len(lst)
+    rotated =  lst[-k:]+lst [:-k]
+    return rotated 
+k = [1,2,3,4,5,6]
+print(rotate_lst(k,2))
