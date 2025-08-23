@@ -235,3 +235,34 @@ def rotate_lst(lst,k):
     return rotated 
 k = [1,2,3,4,5,6]
 print(rotate_lst(k,2))
+
+
+# Python program that takes a list of integers as input and returns a new list containing only the even numbers, sorted in ascending orde
+def ascen_even(lst):
+    l = []
+    for i in lst :
+        if i %2==0:
+            l.append(i)
+    return sorted(l)
+
+Input = [7, 2, 9, 4, 5, 6]  
+print(ascen_even(Input))
+
+
+def filter_vowels(words):
+    l =[]
+    vowels ="aeiou"
+    for word in words :
+       if word[0].lower() in vowels :
+           l.append(word)
+    return l
+Input = ["apple", "ball", "orange", "umbrella", "kite"]  
+print(filter_vowels(Input))
+
+
+def remove_dupes(lst):
+    l = []
+    for i in lst:
+        if i not in l:   # add only if not already present
+            l.append(i)
+    return l
